@@ -1,5 +1,5 @@
 // TODO: Readme
 
-__**Citadel Discord**__
+**Citadel Discord**
 
 [Discord Server](https://discord.com/invite/zhhHu5HG8c)
