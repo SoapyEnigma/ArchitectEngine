@@ -1,3 +1,5 @@
 /Testbed/Testbed/x64
 /.vs
 *.vcxproj
+/Engine/.vs
+/Testbed/.vs
