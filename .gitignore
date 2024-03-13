@@ -3,3 +3,15 @@
 *.vcxproj
 /Engine/.vs
 /Testbed/.vs
+*.sln
+*.log
+*.tlog
+*.obj
+*.idb
+*.pdb
+*.dll
+*.exe
+*.filters
+*.user
+*.ilk
+*.recipe
