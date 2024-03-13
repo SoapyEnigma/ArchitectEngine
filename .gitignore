@@ -1,3 +1,3 @@
-.exe
-.log
-.tlog
+/Testbed/Testbed/x64
+/.vs
+*.vcxproj
