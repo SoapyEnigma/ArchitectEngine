@@ -34,7 +34,6 @@ build*/
 .vs/
 .vscode/
 out/
-CMakeSettings.json
 
 # Exceptions
 .cache/
