@@ -1,5 +1,8 @@
 // TODO: Readme
 
-**Citadel Discord**
+### What is Citadel using?
+- C++ 20
+- Vulkan 1.3
 
-[Discord Server](https://discord.com/invite/zhhHu5HG8c)
+### Citadel Discord
+Link: [Discord Server](https://discord.com/invite/zhhHu5HG8c)
