@@ -16,3 +16,6 @@
 *.ilk
 *.recipe
 /Engine/x64
+/Testbed/Bin
+/Engine/Bin
+*.lib
