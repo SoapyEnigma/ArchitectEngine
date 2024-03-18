@@ -9,7 +9,10 @@ project "Engine"
 
    includedirs
    {
-      "Source"
+      "Source",
+	  
+	  -- Include Third Party
+	  "Vendor/spdlog/include"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

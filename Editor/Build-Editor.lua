@@ -13,6 +13,9 @@ project "Editor"
 
 	  -- Include Engine
 	  "../Engine/Source"
+	  
+	  -- Include Third Party
+	  "Vendor/spdlog/include"
    }
 
    links
