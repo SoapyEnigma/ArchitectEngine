@@ -1,4 +1,19 @@
-int main()
+#include <Engine.h>
+
+class Editor : public ww::Application
 {
-	return 0;
+public:
+	Editor()
+	{
+
+	}
+	~Editor()
+	{
+
+	}
+};
+
+ww::Application* ww::CreateApplication()
+{
+	return new Editor();
 }
