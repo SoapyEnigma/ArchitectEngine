@@ -20,7 +20,9 @@ project "Editor"
 		"../Engine/Source",
 		
 		-- Include Third Party
-		"../Vendor/Binaries/spdlog/include"
+		"../Vendor/Binaries/spdlog/include",
+		"../Vendor/Binaries/imgui-docking",
+		"../Vendor/Binaries/imgui-docking/backends"
 	}
 	
 	links
