@@ -10,8 +10,6 @@ workspace "Wormwood"
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "Engine"
-	include "Engine/Build-Engine.lua"
-group ""
+include "Engine/Build-Engine.lua"
 
 include "Editor/Build-Editor.lua"
