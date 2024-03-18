@@ -1,12 +1,12 @@
 -- premake5.lua
 workspace "Wormwood"
-   architecture "x64"
-   configurations { "Debug", "Release", "Dist" }
-   startproject "Editor"
+	architecture "x64"
+	configurations { "Debug", "Release", "Dist" }
+	startproject "Editor"
 
-   -- Workspace-wide build options for MSVC
-   filter "system:windows"
-      buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
+	-- Workspace-wide build options for MSVC
+	filter "system:windows"
+		buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
