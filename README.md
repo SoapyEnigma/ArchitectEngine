@@ -12,5 +12,5 @@ Make sure to have [Premake5](https://premake.github.io/) installed and set up pr
 - [Dear Imgui (Docking Branch)](https://github.com/ocornut/imgui/tree/docking)
 - [sdplog](https://github.com/gabime/spdlog)
 
-## Wormwood Discord
-[Discord Link](https://discord.com/invite/zhhHu5HG8c)
+## Links
+- [Discord Link](https://discord.com/invite/zhhHu5HG8c)
