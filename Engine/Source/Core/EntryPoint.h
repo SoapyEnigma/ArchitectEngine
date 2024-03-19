@@ -1,16 +1,18 @@
 #pragma once
 
-#ifdef WW_PLATFORM_WINDOWS
+#ifdef AE_PLATFORM_WINDOWS
 
-extern ww::Application* ww::CreateApplication();
+extern AE::Application* AE::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	ww::Log::Init();
-	WW_ENGINE_WARN("Initialized Log.");
-	WW_APP_INFO("Initialized Log.");
+	AE::Log::Init();
 
-	auto editor = ww::CreateApplication();
+	AE_ENGINE_TRACE("Initialized Logger.");
+	
+	AE_APP_TRACE("Initialized Logger.");
+
+	auto editor = AE::CreateApplication();
 	editor->Run();
 	delete editor;
 }

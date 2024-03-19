@@ -1,6 +1,6 @@
 #include <Engine.h>
 
-class Editor : public ww::Application
+class Editor : public AE::Application
 {
 public:
 	Editor()
@@ -13,7 +13,7 @@ public:
 	}
 };
 
-ww::Application* ww::CreateApplication()
+AE::Application* AE::CreateApplication()
 {
 	return new Editor();
 }

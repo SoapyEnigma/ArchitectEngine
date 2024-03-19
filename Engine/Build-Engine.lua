@@ -7,9 +7,13 @@ project "Engine"
 
 	defines
 	{
-		"WW_PLATFORM_WINDOWS",
-		"WW_BUILD_DLL"
+		"AE_PLATFORM_WINDOWS",
+		"AE_BUILD_DLL",
+		"AE_ENABLE_ASSERTS"
 	}
+	
+	pchheader "aepch.h"
+	pchsource "Source/aepch.cpp"
 	
 	files { "Source/**.h", "Source/**.cpp" }
 
@@ -20,7 +24,16 @@ project "Engine"
 		-- Include Third Party
 		"../Vendor/Binaries/spdlog/include",
 		"../Vendor/Binaries/imgui-docking",
-		"../Vendor/Binaries/imgui-docking/backends"
+		"../Vendor/Binaries/imgui-docking/backends",
+		"../Vendor/Binaries/SDL2/include",
+		"$(VULKAN_SDK)/include"
+	}
+	
+	links
+	{
+		"../Vendor/Binaries/SDL2/lib/x64/SDL2",
+		"../Vendor/Binaries/SDL2/lib/x64/SDL2main",
+		"$(VULKAN_SDK)/Lib/vulkan-1"
 	}
 
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

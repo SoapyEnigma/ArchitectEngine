@@ -3,12 +3,11 @@
 #include "Defines.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
 
-#include <memory>
-
-namespace ww
+namespace AE
 {
-	class WW_API Log
+	class AE_API Log
 	{
 	public:
 		static void Init();
@@ -22,14 +21,16 @@ namespace ww
 	};
 }
 
-#define WW_ENGINE_FATAL(...) ::ww::Log::GetEngineLogger()->fatal(__VA_ARGS__)
-#define WW_ENGINE_ERROR(...) ::ww::Log::GetEngineLogger()->error(__VA_ARGS__)
-#define WW_ENGINE_WARN(...)  ::ww::Log::GetEngineLogger()->warn(__VA_ARGS__)
-#define WW_ENGINE_INFO(...)  ::ww::Log::GetEngineLogger()->info(__VA_ARGS__)
-#define WW_ENGINE_TRACE(...) ::ww::Log::GetEngineLogger()->trace(__VA_ARGS__)
+#define AE_ENGINE_CRITICAL(...)		::AE::Log::GetEngineLogger()->critical(__VA_ARGS__)
+#define AE_ENGINE_ERROR(...)		::AE::Log::GetEngineLogger()->error(__VA_ARGS__)
+#define AE_ENGINE_WARN(...)			::AE::Log::GetEngineLogger()->warn(__VA_ARGS__)
+#define AE_ENGINE_INFO(...)			::AE::Log::GetEngineLogger()->info(__VA_ARGS__)
+#define AE_ENGINE_DEBUG(...)		::AE::Log::GetEngineLogger()->debug(__VA_ARGS__)
+#define AE_ENGINE_TRACE(...)		::AE::Log::GetEngineLogger()->trace(__VA_ARGS__)
 
-#define WW_APP_FATAL(...) ::ww::Log::GetAppLogger()->fatal(__VA_ARGS__)
-#define WW_APP_ERROR(...) ::ww::Log::GetAppLogger()->error(__VA_ARGS__)
-#define WW_APP_WARN(...)  ::ww::Log::GetAppLogger()->warn(__VA_ARGS__)
-#define WW_APP_INFO(...)  ::ww::Log::GetAppLogger()->info(__VA_ARGS__)
-#define WW_APP_TRACE(...) ::ww::Log::GetAppLogger()->trace(__VA_ARGS__)
+#define AE_APP_CRITICAL(...)		::AE::Log::GetAppLogger()->critical(__VA_ARGS__)
+#define AE_APP_ERROR(...)			::AE::Log::GetAppLogger()->error(__VA_ARGS__)
+#define AE_APP_WARN(...)			::AE::Log::GetAppLogger()->warn(__VA_ARGS__)
+#define AE_APP_INFO(...)			::AE::Log::GetAppLogger()->info(__VA_ARGS__)
+#define AE_APP_DEBUG(...)			::AE::Log::GetAppLogger()->debug(__VA_ARGS__)
+#define AE_APP_TRACE(...)			::AE::Log::GetAppLogger()->trace(__VA_ARGS__)

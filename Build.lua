@@ -1,8 +1,8 @@
 -- premake5.lua
-workspace "Wormwood"
+workspace "Architect"
 	architecture "x64"
 	configurations { "Debug", "Release", "Dist" }
-	startproject "Editor"
+	startproject "App"
 
 	-- Workspace-wide build options for MSVC
 	filter "system:windows"
@@ -12,4 +12,4 @@ OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 include "Engine/Build-Engine.lua"
 
-include "Editor/Build-Editor.lua"
+include "App/Build-App.lua"

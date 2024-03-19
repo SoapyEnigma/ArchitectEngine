@@ -1,16 +1,20 @@
 #pragma once
 
-#include "Defines.h"
+#include "Core/Defines.h"
+#include "Core/Window.h"
 
-namespace ww
+namespace AE
 {
-	class WW_API Application
+	class AE_API Application
 	{
 	public:
 		Application();
 		virtual ~Application();
 
 		void Run();
+	private:
+		std::unique_ptr<Window> _Window;
+		bool _Running = true;
 	};
 
 	Application* CreateApplication();

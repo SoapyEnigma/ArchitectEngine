@@ -1,4 +1,4 @@
-project "Editor"
+project "App"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++20"
@@ -7,7 +7,7 @@ project "Editor"
 	
 	defines
 	{
-		"WW_PLATFORM_WINDOWS",
+		"AE_PLATFORM_WINDOWS",
 	}
 	
 	files { "Source/**.h", "Source/**.cpp" }

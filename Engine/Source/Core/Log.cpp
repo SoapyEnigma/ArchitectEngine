@@ -1,6 +1,8 @@
+#include "aepch.h"
+
 #include "Log.h"
 
-namespace ww
+namespace AE
 {
 	std::shared_ptr<spdlog::logger> Log::_EngineLogger;
 	std::shared_ptr<spdlog::logger> Log::_AppLogger;
