@@ -26,6 +26,8 @@ project "Engine"
 		"../Vendor/Binaries/imgui-docking",
 		"../Vendor/Binaries/imgui-docking/backends",
 		"../Vendor/Binaries/SDL2/include",
+		"../Vendor/Binaries/VMA/include",
+		"../Vendor/Binaries/vk-bootstrap/src",
 		"$(VULKAN_SDK)/include"
 	}
 	

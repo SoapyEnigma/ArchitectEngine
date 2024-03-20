@@ -11,7 +11,10 @@ namespace AE
 		Application();
 		virtual ~Application();
 
+		void OnEvent(Event& e);
+
 		void Run();
+
 	private:
 		std::unique_ptr<Window> _Window;
 		bool _Running = true;

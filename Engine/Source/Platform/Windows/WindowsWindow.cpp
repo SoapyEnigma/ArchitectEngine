@@ -1,5 +1,10 @@
 #include "aepch.h"
+
 #include "WindowsWindow.h"
+
+#include "Events/ApplicationEvent.h"
+#include "Events/KeyEvent.h"
+#include "Events/MouseEvent.h"
 
 namespace AE
 {
@@ -48,18 +53,27 @@ namespace AE
 	
 		if (!_SDLInitialized)
 		{
-			bool success = false;
-			if (SDL_Init(SDL_INIT_VIDEO) == 0)
+			if (SDL_Init(SDL_INIT_VIDEO) != 0)
 			{
-				success = true;
+				AE_ENGINE_ASSERT(0, "Could not initialize SDL2!");
 			}
 
-			AE_ENGINE_ASSERT(success, "Could not initialize SDL2!");
+			_SDLInitialized = true;
 
 			_Window = SDL_CreateWindow(props.title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, props.width, props.height, SDL_WINDOW_SHOWN);
 
 			_Surface = SDL_GetWindowSurface(_Window);
 		}
+
+		auto SDLWindowResize = [](SDL_Window* window, u32 width, u32 height)
+		{
+			WindowData& data = *(WindowData*)window;
+			
+			WindowResizeEvent event(width, height);
+			data.eventCallback(event);
+			data.width = width;
+			data.height = height;
+		};
 	}
 
 	void WindowsWindow::Shutdown()
