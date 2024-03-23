@@ -9,4 +9,6 @@
 
 #include "ImGui/ImGuiLayer.h"
 
+#include <imgui.h>
+
 #include "Core/EntryPoint.h"

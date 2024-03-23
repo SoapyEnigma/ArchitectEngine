@@ -27,7 +27,9 @@ project "App"
 	
 	links
 	{
-		"Engine"
+		"Engine",
+
+		"../Vendor/Binaries/imgui/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/imgui/IMGUI",
 	}
 	
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
