@@ -25,7 +25,7 @@ project "Engine"
 		"../Vendor/Binaries/spdlog/include",
 		"../Vendor/Binaries/imgui-docking",
 		"../Vendor/Binaries/imgui-docking/backends",
-		"../Vendor/Binaries/SDL2/include",
+		"../Vendor/Binaries/glfw/include",
 		"../Vendor/Binaries/VMA/include",
 		"../Vendor/Binaries/vk-bootstrap/src",
 		"$(VULKAN_SDK)/include"
@@ -33,13 +33,15 @@ project "Engine"
 	
 	links
 	{
-		"../Vendor/Binaries/SDL2/lib/x64/SDL2",
-		"../Vendor/Binaries/SDL2/lib/x64/SDL2main",
+		"../Vendor/Binaries/glfw/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/GLFW/GLFW",
+		"opengl32",
 		"$(VULKAN_SDK)/Lib/vulkan-1"
 	}
 
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
 	objdir ("../Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
+	
+	postbuildcommands { "{COPYFILE} %[%{!cfg.targetdir}/Engine.dll] %[%{!wks.location}/Binaries/" .. OutputDir .. "/App/]" }
 	
 	filter "system:windows"
 		systemversion "latest"

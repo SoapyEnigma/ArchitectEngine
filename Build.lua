@@ -10,6 +10,8 @@ workspace "AE"
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
+include "Vendor/Binaries/glfw/premake5.lua"
+
 include "Engine/Build-Engine.lua"
 
 include "App/Build-App.lua"

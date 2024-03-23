@@ -3,11 +3,11 @@
 #include "Core/Application.h"
 #include "Core/Log.h"
 
-#include "Events/ApplicationEvent.h"
+#include "GLFW/glfw3.h"
 
 namespace AE
 {
-#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application::Application()
 	{
@@ -22,14 +22,25 @@ namespace AE
 
 	void Application::OnEvent(Event& e)
 	{
-		AE_APP_INFO("{0}", e);
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+		AE_ENGINE_TRACE("{0}", e.ToString());
 	}
 
 	void Application::Run()
 	{
 		while (_Running)
 		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 			_Window->OnUpdate();
 		}
+	}
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		_Running = false;
+
+		return true;
 	}
 }

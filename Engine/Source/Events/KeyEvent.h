@@ -29,8 +29,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("KeyPressedEvent: {0} ({1} repeats)\n", _KeyCode, _RepeatCount);
-			return s.c_str();
+			std::string s = fmt::format("KeyPressedEvent: {0} ({1} repeats)", _KeyCode, _RepeatCount);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(KeyPressed);
@@ -39,7 +39,7 @@ namespace AE
 		i32 _RepeatCount;
 	};
 
-	class AE_API KeyReleasedEvent : KeyEvent
+	class AE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(i32 keycode)
@@ -47,8 +47,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("KeyReleasedEvent: {0}\n", _KeyCode);
-			return s.c_str();
+			std::string s = fmt::format("KeyReleasedEvent: {0}", _KeyCode);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased);

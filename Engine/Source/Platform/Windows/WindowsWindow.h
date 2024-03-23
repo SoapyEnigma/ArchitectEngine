@@ -1,7 +1,8 @@
 #pragma once
 
 #include "Core/Window.h"
-#include "SDL2/SDL.h"
+
+#include "GLFW/glfw3.h"
 
 namespace AE
 {
@@ -25,8 +26,7 @@ namespace AE
 		virtual void Shutdown();
 
 	private:
-		SDL_Window* _Window;
-		SDL_Surface* _Surface;
+		GLFWwindow* _Window;
 
 		struct WindowData
 		{

@@ -10,7 +10,7 @@ Make sure to have [Premake5](https://premake.github.io/) installed and set up pr
 - [Vulkan](https://www.vulkan.org/)
 - [Vulkan Memory Allocator](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator)
 - [vk-bootstrap](https://github.com/charles-lunarg/vk-bootstrap/tree/main)
-- [SDL2](https://www.libsdl.org/)
+- [glfw](https://github.com/glfw/glfw)
 - [Dear Imgui (Docking Branch)](https://github.com/ocornut/imgui/tree/docking)
 - [sdplog](https://github.com/gabime/spdlog)
 

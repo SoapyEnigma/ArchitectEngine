@@ -7,3 +7,6 @@
 [submodule "Vendor/Binaries/vk-bootstrap"]
 	path = Vendor/Binaries/vk-bootstrap
 	url = https://github.com/charles-lunarg/vk-bootstrap
+[submodule "Vendor/Binaries/glfw"]
+	path = Vendor/Binaries/glfw
+	url = https://github.com/glfw/glfw

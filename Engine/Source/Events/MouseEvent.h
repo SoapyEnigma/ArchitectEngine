@@ -16,8 +16,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("MouseMovedEvent: {0}, {1}\n", _MouseX, _MouseY);
-			return s.c_str();
+			std::string s = fmt::format("MouseMovedEvent: {0}, {1}", _MouseX, _MouseY);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved);
@@ -39,8 +39,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("MouseScrolledEvent: {0}, {1}\n", _XOffset, _YOffset);
-			return s.c_str();
+			std::string s = fmt::format("MouseScrolledEvent: {0}, {1}", _XOffset, _YOffset);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled);
@@ -73,8 +73,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("MouseButtonPressedEvent: {0}\n", _Button);
-			return s.c_str();
+			std::string s = fmt::format("MouseButtonPressedEvent: {0}", _Button);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed);
@@ -88,8 +88,8 @@ namespace AE
 
 		std::string ToString() const override
 		{
-			std::string s = fmt::format("MouseButtonReleasedEvent: {0}\n", _Button);
-			return s.c_str();
+			std::string s = fmt::format("MouseButtonReleasedEvent: {0}", _Button);
+			return s;
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonReleased);

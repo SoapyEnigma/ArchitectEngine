@@ -15,7 +15,7 @@ namespace AE
 
 		std::string ToString() const override
 		{	
-			std::string s = fmt::format("WindowResizeEvent: {}, {}\n", _Width, _Height);
+			std::string s = fmt::format("WindowResizeEvent: {}, {}", _Width, _Height);
 			return s;
 		}
 
