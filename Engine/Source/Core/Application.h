@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core/Defines.h"
 #include "Core/Window.h"
+#include "Core/LayerStack.h"
 
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
@@ -14,16 +14,25 @@ namespace AE
 		Application();
 		virtual ~Application();
 
+		void Run();
+
 		void OnEvent(Event& e);
 
-		void Run();
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
+		inline static Application& Get() { return *_Instance; }
+		inline Window& GetWindow() { return *_Window; }
 
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 	private:
+		static Application* _Instance;
 		std::unique_ptr<Window> _Window;
 		bool _Running = true;
+
+		LayerStack _LayerStack;
 	};
 
 	Application* CreateApplication();

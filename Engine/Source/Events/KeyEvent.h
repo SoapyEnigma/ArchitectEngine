@@ -53,4 +53,19 @@ namespace AE
 
 		EVENT_CLASS_TYPE(KeyReleased);
 	};
+
+	class AE_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(i32 keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::string s = fmt::format("KeyTypedEvent: {0})", _KeyCode);
+			return s;
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped);
+	};
 }

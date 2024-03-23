@@ -34,8 +34,8 @@ namespace AE
 		MouseScrolledEvent(f32 xOffset, f32 yOffset)
 			: _XOffset(xOffset), _YOffset(yOffset) {}
 
-		inline f32 GetX() const { return _XOffset; }
-		inline f32 GetY() const { return _YOffset; }
+		inline f32 GetXOffset() const { return _XOffset; }
+		inline f32 GetYOffset() const { return _YOffset; }
 
 		std::string ToString() const override
 		{

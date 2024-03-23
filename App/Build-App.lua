@@ -21,8 +21,8 @@ project "App"
 		
 		-- Include Third Party
 		"../Vendor/Binaries/spdlog/include",
-		"../Vendor/Binaries/imgui-docking",
-		"../Vendor/Binaries/imgui-docking/backends"
+		"../Vendor/Binaries/imgui/include",
+		"../Vendor/Binaries/imgui/backends"
 	}
 	
 	links

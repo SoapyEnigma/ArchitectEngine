@@ -21,6 +21,7 @@ namespace AE
 
 		KeyPressed,
 		KeyReleased,
+		KeyTyped,
 
 		MouseButtonPressed,
 		MouseButtonReleased,
@@ -46,7 +47,6 @@ namespace AE
 
 	class AE_API Event
 	{
-		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -58,7 +58,7 @@ namespace AE
 			return GetCategoryFlags() & category;
 		}
 
-	protected:
+	public:
 		bool _Handled = false;
 	};
 
@@ -88,4 +88,9 @@ namespace AE
 	private:
 		Event& _Event;
 	};
+
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.ToString();
+	}
 }

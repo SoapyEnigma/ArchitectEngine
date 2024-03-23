@@ -23,9 +23,10 @@ project "Engine"
 	  
 		-- Include Third Party
 		"../Vendor/Binaries/spdlog/include",
-		"../Vendor/Binaries/imgui-docking",
-		"../Vendor/Binaries/imgui-docking/backends",
+		"../Vendor/Binaries/imgui/include",
+		"../Vendor/Binaries/imgui/backends",
 		"../Vendor/Binaries/glfw/include",
+		"../Vendor/Binaries/glad/include",
 		"../Vendor/Binaries/VMA/include",
 		"../Vendor/Binaries/vk-bootstrap/src",
 		"$(VULKAN_SDK)/include"
@@ -33,7 +34,9 @@ project "Engine"
 	
 	links
 	{
+		"../Vendor/Binaries/imgui/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/imgui/IMGUI",
 		"../Vendor/Binaries/glfw/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/GLFW/GLFW",
+		"../Vendor/Binaries/glad/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/glad/GLAD",
 		"opengl32",
 		"$(VULKAN_SDK)/Lib/vulkan-1"
 	}

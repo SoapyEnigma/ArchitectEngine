@@ -6,6 +6,8 @@
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace AE
 {
 	static bool _GLFWInitialized = false;
@@ -50,7 +52,6 @@ namespace AE
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
-		printf("got here\n");
 		_Data.title = props.title;
 		_Data.width = props.width;
 		_Data.height = props.height;
@@ -67,6 +68,10 @@ namespace AE
 
 		_Window = glfwCreateWindow((i32)props.width, (i32)props.height, _Data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(_Window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		AE_ENGINE_ASSERT(status, "Failed to initialize glad!");
+
 		glfwSetWindowUserPointer(_Window, &_Data);
 		SetVSync(true);
 
@@ -113,6 +118,13 @@ namespace AE
 					break;
 				}
 				}
+			});
+
+		glfwSetCharCallback(_Window, [](GLFWwindow* window, u32 keycode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent event(keycode);
+				data.eventCallback(event);
 			});
 
 		glfwSetMouseButtonCallback(_Window, [](GLFWwindow* window, i32 button, i32 action, i32 mods)
