@@ -16,7 +16,7 @@ public:
 
 	void OnEvent(AE::Event& e) override
 	{
-		//AE_APP_TRACE("{0}", e);
+		
 	}
 };
 

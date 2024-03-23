@@ -1,14 +1,15 @@
 #include "aepch.h"
 
 #include "Core/Application.h"
+#include "Core/Defines.h"
 #include "Core/Log.h"
+
+#include "Input.h"
 
 #include "GLFW/glfw3.h"
 
 namespace AE
 {
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	Application* Application::_Instance = nullptr;
 
 	Application::Application()
@@ -17,7 +18,7 @@ namespace AE
 		_Instance = this;
 
 		_Window = std::unique_ptr<Window>(Window::Create());
-		_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+		_Window->SetEventCallback(AE_BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application()
@@ -42,7 +43,7 @@ namespace AE
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+		dispatcher.Dispatch<WindowCloseEvent>(AE_BIND_EVENT_FN(Application::OnWindowClose));
 
 		//AE_ENGINE_TRACE("{0}", e);
 
