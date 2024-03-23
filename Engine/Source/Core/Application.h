@@ -6,6 +6,8 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 
+#include "ImGui/ImGuiLayer.h"
+
 namespace AE
 {
 	class AE_API Application
@@ -30,6 +32,7 @@ namespace AE
 	private:
 		static Application* _Instance;
 		std::unique_ptr<Window> _Window;
+		ImGuiLayer* _ImGuiLayer;
 		bool _Running = true;
 
 		LayerStack _LayerStack;

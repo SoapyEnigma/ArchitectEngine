@@ -26,7 +26,6 @@ public:
 	Editor()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new AE::ImGuiLayer());
 	}
 	~Editor()
 	{

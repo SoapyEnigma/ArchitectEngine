@@ -10,7 +10,8 @@ project "IMGUI"
 		"backends",
 		"include",
 		
-		"../Vendor/Binaries/glfw/include/GLFW"
+		"%{wks.location}/Vendor/Binaries/glfw/include",
+		--"../Vendor/Binaries/glfw/src"
 	}
 	
 	files 
@@ -19,8 +20,11 @@ project "IMGUI"
 		"include/*.cpp",
 		"backends/imgui_impl_opengl3.h",
 		"backends/imgui_impl_opengl3.cpp",
-		--"backends/imgui_impl_glfw.h",
-		--"backends/imgui_impl_glfw.cpp"
+		"backends/imgui_impl_glfw.h",
+		"backends/imgui_impl_glfw.cpp",
+		--"../Vendor/Binaries/glfw/include/GLFW/*.h",
+		--"../Vendor/Binaries/glfw/src/*.h",
+		--"../Vendor/Binaries/glfw/src/*.c"
 	}
 	
 	links

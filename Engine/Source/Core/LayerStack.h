@@ -21,6 +21,6 @@ namespace AE
 
 	private:
 		std::vector<Layer*> _Layers;
-		std::vector<Layer*>::iterator _LayerInsert;
+		u32 _LayerInsertIndex = 0;
 	};
 }

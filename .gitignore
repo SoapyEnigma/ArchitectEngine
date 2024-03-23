@@ -13,3 +13,5 @@ Makefile
 # Exclude
 !Vendor/Binaries
 /Vendor/Binaries/glm
+/Vendor/Binaries/imgui/bin-int
+App/imgui.ini
