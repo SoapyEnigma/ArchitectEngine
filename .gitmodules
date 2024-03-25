@@ -1,7 +1,3 @@
-[submodule "Vendor/Binaries/imgui"]
-	path = Vendor/Binaries/imgui
-	url = https://github.com/SoapyEnigma/imgui/tree/docking
-
 [submodule "Vendor/Binaries/spdlog"]
 	path = Vendor/Binaries/spdlog
 	url = https://github.com/SoapyEnigma/spdlog

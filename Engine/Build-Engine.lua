@@ -1,5 +1,5 @@
 project "Engine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
 	targetdir "Binaries/%{cfg.buildcfg}"
@@ -23,23 +23,21 @@ project "Engine"
 	  
 		-- Include Third Party
 		"../Vendor/Binaries/spdlog/include",
-		"../Vendor/Binaries/imgui/include",
+		"../Vendor/Binaries/imgui",
 		"../Vendor/Binaries/imgui/backends",
 		"../Vendor/Binaries/glfw/include",
 		"../Vendor/Binaries/glad/include",
+		"../Vendor/Binaries/glad/src",
 		"../Vendor/Binaries/glm",
-		"../Vendor/Binaries/VMA/include",
-		"../Vendor/Binaries/vk-bootstrap/src",
-		"$(VULKAN_SDK)/include"
 	}
 	
 	links
 	{
-		"../Vendor/Binaries/imgui/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/imgui/IMGUI",
-		"../Vendor/Binaries/glfw/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/GLFW/GLFW",
-		"../Vendor/Binaries/glad/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/glad/GLAD",
+		"SPDLOG",
+		"IMGUI",
+		"GLFW",
+		"GLAD",
 		"opengl32",
-		"$(VULKAN_SDK)/Lib/vulkan-1"
 	}
 
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
