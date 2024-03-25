@@ -11,4 +11,3 @@ Binaries/
 Makefile
 
 # Exclude
-/Vendor/Binaries/imgui/bin-int

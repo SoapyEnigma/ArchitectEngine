@@ -1,12 +1,1 @@
-[submodule "Vendor/Binaries/spdlog"]
-	path = Vendor/Binaries/spdlog
-	url = https://github.com/gabime/spdlog
-[submodule "Vendor/Binaries/VMA"]
-	path = Vendor/Binaries/VMA
-	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
-[submodule "Vendor/Binaries/vk-bootstrap"]
-	path = Vendor/Binaries/vk-bootstrap
-	url = https://github.com/charles-lunarg/vk-bootstrap
-[submodule "Vendor/Binaries/glfw"]
-	path = Vendor/Binaries/glfw
-	url = https://github.com/glfw/glfw
+
