@@ -11,3 +11,5 @@ Binaries/
 Makefile
 
 # Exclude
+/Vendor/Binaries/glad/bin-int
+App/imgui.ini

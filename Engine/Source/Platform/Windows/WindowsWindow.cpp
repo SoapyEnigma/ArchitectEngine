@@ -6,8 +6,6 @@
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
 
-#include <glad/glad.h>
-
 namespace AE
 {
 	static bool _GLFWInitialized = false;
@@ -35,7 +33,7 @@ namespace AE
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(_Window);
+		_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
@@ -67,10 +65,9 @@ namespace AE
 		}
 
 		_Window = glfwCreateWindow((i32)props.width, (i32)props.height, _Data.title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(_Window);
-
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		AE_ENGINE_ASSERT(status, "Failed to initialize glad!");
+		
+		_Context = new OpenGLContext(_Window);
+		_Context->Init();
 
 		glfwSetWindowUserPointer(_Window, &_Data);
 		SetVSync(true);

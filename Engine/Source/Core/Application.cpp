@@ -31,6 +31,8 @@ namespace AE
 
 	void Application::Run()
 	{
+		using clock = std::chrono::high_resolution_clock;
+
 		while (_Running)
 		{
 			glClearColor(1, 0, 1, 1);

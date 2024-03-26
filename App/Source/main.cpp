@@ -1,7 +1,5 @@
 #include <Engine.h>
 
-#include "imgui.h"
-
 class ExampleLayer : public AE::Layer
 {
 public:

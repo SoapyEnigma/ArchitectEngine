@@ -2,8 +2,7 @@
 
 #include "Core/Window.h"
 
-#define GLFW_INCLUDE_NONE
-#include "GLFW/glfw3.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace AE
 {
@@ -30,6 +29,7 @@ namespace AE
 
 	private:
 		GLFWwindow* _Window;
+		GraphicsContext* _Context;
 
 		struct WindowData
 		{

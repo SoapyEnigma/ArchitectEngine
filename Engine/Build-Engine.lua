@@ -15,8 +15,6 @@ project "Engine"
 	pchheader "aepch.h"
 	pchsource "Source/aepch.cpp"
 	
-	files { "Source/**.h", "Source/**.cpp" }
-
 	includedirs
 	{
 		"Source",
@@ -24,26 +22,31 @@ project "Engine"
 		-- Include Third Party
 		"../Vendor/Binaries/spdlog/include",
 		"../Vendor/Binaries/imgui",
-		"../Vendor/Binaries/imgui/backends",
 		"../Vendor/Binaries/glfw/include",
 		"../Vendor/Binaries/glad/include",
-		"../Vendor/Binaries/glad/src",
-		"../Vendor/Binaries/glm",
+		"../Vendor/Binaries/glm"
 	}
 	
+	files 
+	{ 
+		"Source/**.h", 
+		"Source/**.cpp",
+		"src/**.h",
+		"src/**.cpp"
+	}
+
 	links
 	{
-		"SPDLOG",
-		"IMGUI",
 		"GLFW",
+		"IMGUI",
 		"GLAD",
-		"opengl32",
+		"opengl32"
 	}
 
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
 	objdir ("../Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
 	
-	postbuildcommands { "{COPYFILE} %[%{!cfg.targetdir}/Engine.dll] %[%{!wks.location}/Binaries/" .. OutputDir .. "/App/]" }
+	postbuildcommands { "{COPYFILE} %[%{!cfg.targetdir}/Engine.lib] %[%{!wks.location}Binaries/" .. OutputDir .. "/App/]" }
 	
 	filter "system:windows"
 		systemversion "latest"

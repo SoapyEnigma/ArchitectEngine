@@ -1,13 +1,15 @@
 #pragma once
 
 #ifdef AE_PLATFORM_WINDOWS
-	#ifdef AE_BUILD_DLL
-		#define AE_API __declspec(dllexport)
-	#else
-		#define AE_API __declspec(dllimport)
+	#if AE_DYNAMIC_LINK
+		#ifdef AE_BUILD_DLL
+			#define AE_API __declspec(dllexport)
+		#else
+			#define AE_API __declspec(dllimport)
 	#endif
-#else
-	//#error AE only supports windows!
+	#else
+		#define AE_API
+	#endif
 #endif
 
 #ifdef AE_ENABLE_ASSERTS

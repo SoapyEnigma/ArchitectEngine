@@ -6,9 +6,6 @@
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
 
-//#define GLFW_INCLUDE_NONE
-//#include "GLFW/glfw3.h"
-
 namespace AE
 {
 	class AE_API ImGuiLayer : public Layer

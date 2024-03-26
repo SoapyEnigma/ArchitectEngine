@@ -20,16 +20,21 @@ project "App"
 		"../Engine/Source",
 		
 		-- Include Third Party
-		--"../Vendor/Binaries/spdlog/include",
-		--"../Vendor/Binaries/imgui/include",
-		--"../Vendor/Binaries/imgui/backends"
+		"../Vendor/Binaries/spdlog/include",
+		"../Vendor/Binaries/imgui/include",
+		"../Vendor/Binaries/imgui/backends"
 	}
 	
 	links
 	{
 		"Engine",
-
+		--"SPDLOG",
+		"IMGUI",
+		"GLFW",
+		"GLAD",
+		"opengl32"
 		--"../Vendor/Binaries/imgui/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/imgui/IMGUI",
+		--"../Vendor/Binaries/spdlog/bin/%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}/spdlog/SPDLOG",
 	}
 	
 	targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

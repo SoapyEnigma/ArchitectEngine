@@ -4,6 +4,13 @@
 
 namespace AE
 {
+	enum class MyEnumTest
+	{
+		HelloWorld,
+		AnotherOne,
+		DangDangTang
+	};
+
 	class AE_API WindowResizeEvent : public Event
 	{
 	public:
